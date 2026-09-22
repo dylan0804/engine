@@ -277,6 +277,10 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
   /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/xlocale/_wctype.h \
   /Users/dylanchristiandihalim/build/include/KHR/khrplatform.h \
   /Users/dylanchristiandihalim/build/include/glad/glad.h \
+  /Users/dylanchristiandihalim/build/include/glm/detail/_vectorize.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/detail/func_trigonometric.inl \
+  /Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp \
   /Users/dylanchristiandihalim/build/include/glm/common.hpp \
   /Users/dylanchristiandihalim/build/include/glm/geometric.hpp \
   /Users/dylanchristiandihalim/build/include/glm/matrix.hpp \
@@ -401,20 +405,17 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
   /Users/dylanchristiandihalim/build/include/glm/detail/type_vec4.inl \
   /Users/dylanchristiandihalim/build/include/glm/exponential.hpp \
   /Users/dylanchristiandihalim/build/include/glm/geometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/simd/platform.h \
   /Users/dylanchristiandihalim/build/include/glm/detail/_vectorize.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/compute_vector_decl.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/compute_vector_relational.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/func_geometric.inl \
   /Users/dylanchristiandihalim/build/include/glm/detail/func_matrix.inl \
-  /Users/dylanchristiandihalim/build/include/glm/detail/func_trigonometric.inl \
   /Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/type_vec3.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/type_vec3.inl \
-  /Users/dylanchristiandihalim/build/include/glm/simd/platform.h \
-  /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp \
   /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.inl \
   /Users/dylanchristiandihalim/build/include/glm/geometric.hpp \
   /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.hpp \
   /Users/dylanchristiandihalim/build/include/glm/gtc/constants.hpp \
@@ -437,6 +438,8 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
   /Users/dylanchristiandihalim/build/include/glm/ext/matrix_clip_space.inl \
   /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.hpp \
   /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.inl \
+  /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.inl \
   /Users/dylanchristiandihalim/build/include/glm/ext/vector_float3.hpp \
   /Users/dylanchristiandihalim/build/include/glm/common.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp \
@@ -546,6 +549,7 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
   /Users/dylanchristiandihalim/build/include/glm/vec4.hpp \
   /Users/dylanchristiandihalim/build/include/glm/gtc/type_ptr.hpp \
   /Users/dylanchristiandihalim/build/include/glm/gtc/type_ptr.inl \
+  /Users/dylanchristiandihalim/build/include/glm/trigonometric.hpp \
   /Users/dylanchristiandihalim/build/include/stb/stb_image.h \
   /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__algorithm/adjacent_find.h \
   /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__algorithm/all_of.h \
@@ -2317,8 +2321,6 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
 
 /Users/dylanchristiandihalim/build/include/glm/detail/type_vec3.inl:
 
-/Users/dylanchristiandihalim/build/include/glm/detail/func_trigonometric.inl:
-
 /Users/dylanchristiandihalim/build/include/glad/glad.h:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__debug_utils/strict_weak_ordering_check.h:
@@ -2360,10 +2362,6 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__assertion_handler:
 
 /Users/dylanchristiandihalim/build/include/glm/detail/compute_vector_decl.hpp:
-
-/Users/dylanchristiandihalim/build/include/glm/ext/vector_int3.hpp:
-
-/Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__type_traits/add_pointer.h:
 
@@ -2546,6 +2544,10 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__functional/unary_negate.h:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__algorithm/stable_partition.h:
+
+/Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp:
+
+/Users/dylanchristiandihalim/build/include/glm/ext/vector_int3.hpp:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__node_handle:
 
@@ -2778,6 +2780,8 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/pthread.h:
 
 /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp:
+
+/Users/dylanchristiandihalim/build/include/glm/detail/func_trigonometric.inl:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/stddef.h:
 
@@ -3189,15 +3193,15 @@ CMakeFiles/app.dir/src/main.cpp.o: /Users/dylanchristiandihalim/build/src/main.c
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdio.h:
 
+/opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__iterator/size.h:
+
+/Users/dylanchristiandihalim/build/include/glm/detail/type_mat2x4.inl:
+
 /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stdarg_va_list.h:
 
 /opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__type_traits/is_char_like_type.h:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h:
-
-/opt/homebrew/Cellar/llvm/22.1.3/include/c++/v1/__iterator/size.h:
-
-/Users/dylanchristiandihalim/build/include/glm/detail/type_mat2x4.inl:
 
 /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h:
 

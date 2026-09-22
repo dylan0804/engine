@@ -1,3 +1,6 @@
+#include "glm/ext/scalar_constants.hpp"
+#include "glm/trigonometric.hpp"
+#include <vector>
 #define STB_IMAGE_IMPLEMENTATION
 #include "glad/glad.h"
 #include "glm/ext/matrix_clip_space.hpp"
@@ -161,6 +164,50 @@ void generate_grid_lines(std::vector<float> &lines) {
   }
 }
 
+typedef struct {
+  float x, y, z;
+} Vertex;
+
+void generate_cylinder(float radius, float height, int segments,
+                       std::vector<Vertex> &verts,
+                       std::vector<unsigned int> &indices) {
+  float half_h = height / 2;
+
+  int verts_per_ring = segments + 1;
+  int vert_count = verts_per_ring * 2; // top n bottom
+
+  int vi = 0;
+
+  for (int i = 0; i <= segments; i++) {
+    float angle = 2.f * glm::pi<float>() * ((float)i / segments);
+    verts.push_back(
+        {radius * glm::cos(angle), half_h, radius * glm::sin(angle)});
+  }
+
+  for (int i = 0; i <= segments; i++) {
+    float angle = 2.f * glm::pi<float>() * ((float)i / segments);
+    verts.push_back(
+        {radius * glm::cos(angle), -half_h, radius * glm::sin(angle)});
+  }
+
+  int max_indices = segments * 6;
+  int ii = 0;
+
+  for (int i = 0; i < segments; i++) {
+    int topA = i;
+    int topB = i + 1;
+    int botA = verts_per_ring + i;
+    int botB = verts_per_ring + i + 1;
+
+    indices.push_back(topA);
+    indices.push_back(botA);
+    indices.push_back(topB);
+    indices.push_back(topB);
+    indices.push_back(botA);
+    indices.push_back(botB);
+  }
+}
+
 int main(void) {
   glfwSetErrorCallback(error_callback);
 
@@ -195,6 +242,10 @@ int main(void) {
   std::vector<float> lines;
   generate_grid_lines(lines);
 
+  std::vector<Vertex> verts;
+  std::vector<unsigned int> indices;
+  generate_cylinder(2.f, 5.f, 24, verts, indices);
+
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwMakeContextCurrent(window);
   gladLoadGL();
@@ -226,13 +277,7 @@ int main(void) {
   glAttachShader(program, fragment_shader);
   glLinkProgram(program);
 
-  const GLuint program2 = glCreateProgram();
-  glAttachShader(program2, vertex_shader);
-  glAttachShader(program2, fragment_shader);
-  glLinkProgram(program2);
-
   const GLint vpos_location = glGetAttribLocation(program, "aPos");
-  const GLint vpos_location2 = glGetAttribLocation(program2, "aPos");
 
   GLuint vertex_array;
   glGenVertexArrays(1, &vertex_array);
@@ -242,6 +287,12 @@ int main(void) {
   glVertexAttribPointer(vpos_location, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float),
                         (void *)0);
 
+  glAttachShader(program, vertex_shader);
+  glAttachShader(program, fragment_shader);
+  glLinkProgram(program);
+
+  const GLint vpos_location2 = glGetAttribLocation(program, "aPos");
+
   GLuint vertex_array2;
   glGenVertexArrays(1, &vertex_array2);
   glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer2);
@@ -249,6 +300,27 @@ int main(void) {
   glEnableVertexAttribArray(vpos_location2);
   glVertexAttribPointer(vpos_location2, 3, GL_FLOAT, GL_FALSE,
                         3 * sizeof(float), (void *)0);
+
+  GLuint vertex_buffer3;
+  glGenBuffers(1, &vertex_buffer3);
+  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer3);
+  glBufferData(GL_ARRAY_BUFFER, verts.size() * sizeof(Vertex), &verts[0],
+               GL_STATIC_DRAW);
+
+  const GLint vpos_location3 = glGetAttribLocation(program, "aPos");
+  GLuint vertex_array3;
+  glGenVertexArrays(1, &vertex_array3);
+  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer3);
+  glBindVertexArray(vertex_array3);
+  glEnableVertexAttribArray(vpos_location3);
+  glVertexAttribPointer(vpos_location3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
+                        (void *)0);
+
+  GLuint ebo;
+  glGenBuffers(1, &ebo);
+  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo);
+  glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int),
+               &indices[0], GL_STATIC_DRAW);
 
   // int img_width, img_height, chan;
   // unsigned char *data =
@@ -272,12 +344,6 @@ int main(void) {
   //   std::cout << "Failed to load texture" << std::endl;
   // }
   // stbi_image_free(data);
-
-  double xpos, ypos;
-  glfwGetCursorPos(window, &xpos, &ypos);
-  double oldX, oldY;
-  oldX = xpos;
-  oldY = ypos;
 
   Camera *c = (Camera *)glfwGetWindowUserPointer(window);
   c->cameraPos = glm::vec3(0.f, 0.f, 3.f);
@@ -320,22 +386,35 @@ int main(void) {
     glBindVertexArray(vertex_array);
     glDrawArrays(GL_TRIANGLES, 0, vertices.size() / 3);
 
-    glUseProgram(program2);
+    colorLoc = glGetUniformLocation(program, "fillColor");
+    glUniform3f(colorLoc, 0.f, 0.f, 0.f);
 
-    unsigned int colorLoc2 = glGetUniformLocation(program2, "fillColor");
-    glUniform3f(colorLoc2, 0.f, 0.f, 0.f);
+    modelLoc = glGetUniformLocation(program, "model");
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
-    unsigned int modelLoc2 = glGetUniformLocation(program2, "model");
-    glUniformMatrix4fv(modelLoc2, 1, GL_FALSE, glm::value_ptr(model));
+    viewLoc = glGetUniformLocation(program, "view");
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
-    unsigned int viewLoc2 = glGetUniformLocation(program2, "view");
-    glUniformMatrix4fv(viewLoc2, 1, GL_FALSE, glm::value_ptr(view));
-
-    unsigned int projectionLoc2 = glGetUniformLocation(program2, "projection");
-    glUniformMatrix4fv(projectionLoc2, 1, GL_FALSE, glm::value_ptr(projection));
+    projectionLoc = glGetUniformLocation(program, "projection");
+    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
     glBindVertexArray(vertex_array2);
     glDrawArrays(GL_LINES, 0, lines.size() / 3);
+
+    colorLoc = glGetUniformLocation(program, "fillColor");
+    glUniform3f(colorLoc, 0.85f, 0.45f, 0.2f);
+
+    modelLoc = glGetUniformLocation(program, "model");
+    glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
+
+    viewLoc = glGetUniformLocation(program, "view");
+    glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
+
+    projectionLoc = glGetUniformLocation(program, "projection");
+    glUniformMatrix4fv(projectionLoc, 1, GL_FALSE, glm::value_ptr(projection));
+
+    glBindVertexArray(vertex_array3);
+    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
 
     glfwSwapBuffers(window);
     glfwPollEvents();
