@@ -176,13 +176,23 @@ void generate_cylinder(float radius, float height, int segments,
   int verts_per_ring = segments + 1;
   int vert_count = verts_per_ring * 2; // top n bottom
 
-  int vi = 0;
-
+  verts.push_back({0.f, half_h, 0.f}); // center;
+  // top cap
   for (int i = 0; i <= segments; i++) {
     float angle = 2.f * glm::pi<float>() * ((float)i / segments);
-    verts.push_back(
-        {radius * glm::cos(angle), half_h, radius * glm::sin(angle)});
+    verts.push_back({radius * cos(angle), half_h, radius * sin(angle)});
   }
+
+  for (int i = 1; i <= segments; i++) {
+    int posa = i;
+    int posb = i + 1;
+    indices.push_back(0);
+    indices.push_back(posa);
+    indices.push_back(posb);
+  }
+
+  int bot_center_index = verts.size();
+  verts.push_back({0.f, -half_h, 0.f});
 
   for (int i = 0; i <= segments; i++) {
     float angle = 2.f * glm::pi<float>() * ((float)i / segments);
@@ -190,10 +200,17 @@ void generate_cylinder(float radius, float height, int segments,
         {radius * glm::cos(angle), -half_h, radius * glm::sin(angle)});
   }
 
-  int max_indices = segments * 6;
+  for (int i = 0; i < segments; i++) {
+    int posa = bot_center_index + i;
+    int posb = bot_center_index + i + 1;
+    indices.push_back(bot_center_index);
+    indices.push_back(posa);
+    indices.push_back(posb);
+  }
+
   int ii = 0;
 
-  for (int i = 0; i < segments; i++) {
+  for (int i = 0; i <= segments; i++) {
     int topA = i;
     int topB = i + 1;
     int botA = verts_per_ring + i;
@@ -244,7 +261,7 @@ int main(void) {
 
   std::vector<Vertex> verts;
   std::vector<unsigned int> indices;
-  generate_cylinder(2.f, 5.f, 24, verts, indices);
+  generate_cylinder(5.f, 10.f, 32, verts, indices);
 
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwMakeContextCurrent(window);
