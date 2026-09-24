@@ -1,5 +1,7 @@
 #include "glm/ext/scalar_constants.hpp"
 #include "glm/trigonometric.hpp"
+#include <cmath>
+#include <ostream>
 #include <vector>
 #define STB_IMAGE_IMPLEMENTATION
 #include "glad/glad.h"
@@ -168,53 +170,60 @@ typedef struct {
   float x, y, z;
 } Vertex;
 
-void generate_cylinder(float radius, float height, int segments,
-                       std::vector<Vertex> &verts,
+void generate_cylinder(float radius, float height, int longSegments,
+                       int latSegments, std::vector<Vertex> &verts,
                        std::vector<unsigned int> &indices) {
   float half_h = height / 2;
-
-  int verts_per_ring = segments + 1;
+  int verts_per_ring = longSegments + 1;
   int vert_count = verts_per_ring * 2; // top n bottom
 
-  verts.push_back({0.f, half_h, 0.f}); // center;
-  // top cap
-  for (int i = 0; i <= segments; i++) {
-    float angle = 2.f * glm::pi<float>() * ((float)i / segments);
+  // top hemisphere
+  for (int i = 0; i <= latSegments; i++) {
+    float theta = (glm::pi<float>() / 2) * ((float)i / latSegments);
+    float ringRadius = radius * sin(theta);
+
+    for (int j = 0; j <= longSegments; j++) {
+      float angle = 2.f * glm::pi<float>() * ((float)j / longSegments);
+      float y = half_h + (radius * cos(theta));
+      verts.push_back({ringRadius * cos(angle), y, ringRadius * sin(angle)});
+    }
+  }
+
+  for (int lat = 0; lat < latSegments; lat++) {
+    int ringA = lat * (longSegments + 1);
+    int ringB = (lat + 1) * (longSegments + 1);
+
+    for (int j = 0; j < longSegments; j++) {
+      int topA = ringA + j;
+      int topB = ringA + j + 1;
+      int botA = ringB + j;
+      int botB = ringB + j + 1;
+
+      indices.push_back(topA);
+      indices.push_back(botA);
+      indices.push_back(topB);
+      indices.push_back(topB);
+      indices.push_back(botA);
+      indices.push_back(botB);
+    }
+  }
+
+  int wall_start = verts.size();
+  for (int i = 0; i <= longSegments; i++) {
+    float angle = 2.f * glm::pi<float>() * ((float)i / longSegments);
     verts.push_back({radius * cos(angle), half_h, radius * sin(angle)});
   }
 
-  for (int i = 1; i <= segments; i++) {
-    int posa = i;
-    int posb = i + 1;
-    indices.push_back(0);
-    indices.push_back(posa);
-    indices.push_back(posb);
+  for (int i = 0; i <= longSegments; i++) {
+    float angle = 2.f * glm::pi<float>() * ((float)i / longSegments);
+    verts.push_back({radius * cos(angle), -half_h, radius * sin(angle)});
   }
 
-  int bot_center_index = verts.size();
-  verts.push_back({0.f, -half_h, 0.f});
-
-  for (int i = 0; i <= segments; i++) {
-    float angle = 2.f * glm::pi<float>() * ((float)i / segments);
-    verts.push_back(
-        {radius * glm::cos(angle), -half_h, radius * glm::sin(angle)});
-  }
-
-  for (int i = 0; i < segments; i++) {
-    int posa = bot_center_index + i;
-    int posb = bot_center_index + i + 1;
-    indices.push_back(bot_center_index);
-    indices.push_back(posa);
-    indices.push_back(posb);
-  }
-
-  int ii = 0;
-
-  for (int i = 0; i <= segments; i++) {
-    int topA = i;
-    int topB = i + 1;
-    int botA = verts_per_ring + i;
-    int botB = verts_per_ring + i + 1;
+  for (int i = 0; i <= longSegments; i++) {
+    int topA = wall_start + i;
+    int topB = wall_start + i + 1;
+    int botA = verts_per_ring + wall_start + i;
+    int botB = verts_per_ring + wall_start + i + 1;
 
     indices.push_back(topA);
     indices.push_back(botA);
@@ -222,6 +231,38 @@ void generate_cylinder(float radius, float height, int segments,
     indices.push_back(topB);
     indices.push_back(botA);
     indices.push_back(botB);
+  }
+
+  int bot_start = verts.size();
+  // bottom hemisphere
+  for (int i = 0; i <= latSegments; i++) {
+    float theta = (glm::pi<float>() / 2) * ((float)i / latSegments);
+    float ringRadius = radius * sin(theta);
+
+    for (int j = 0; j <= longSegments; j++) {
+      float angle = 2.f * glm::pi<float>() * ((float)j / longSegments);
+      float y = -half_h - (radius * cos(theta));
+      verts.push_back({ringRadius * cos(angle), y, ringRadius * sin(angle)});
+    }
+  }
+
+  for (int lat = 0; lat < latSegments; lat++) {
+    int ringA = bot_start + (lat * verts_per_ring);
+    int ringB = bot_start + ((lat + 1) * verts_per_ring);
+
+    for (int j = 0; j < longSegments; j++) {
+      int topA = ringA + j;
+      int topB = ringA + j + 1;
+      int botA = ringB + j;
+      int botB = ringB + j + 1;
+
+      indices.push_back(topA);
+      indices.push_back(botA);
+      indices.push_back(topB);
+      indices.push_back(topB);
+      indices.push_back(botA);
+      indices.push_back(botB);
+    }
   }
 }
 
@@ -261,7 +302,7 @@ int main(void) {
 
   std::vector<Vertex> verts;
   std::vector<unsigned int> indices;
-  generate_cylinder(5.f, 10.f, 32, verts, indices);
+  generate_cylinder(0.4f, 1.0f, 32, 8, verts, indices);
 
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwMakeContextCurrent(window);
@@ -421,6 +462,7 @@ int main(void) {
     colorLoc = glGetUniformLocation(program, "fillColor");
     glUniform3f(colorLoc, 0.85f, 0.45f, 0.2f);
 
+    model = glm::translate(model, glm::vec3(0.f, 1.4f, 0.f));
     modelLoc = glGetUniformLocation(program, "model");
     glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 
