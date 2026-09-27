@@ -7,6 +7,7 @@
 #include "mesh.h"
 #include "shader.h"
 #include <GLFW/glfw3.h>
+#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <cstdio>
@@ -262,63 +263,29 @@ int main(void) {
   // glfwSetInputMode(window, GLFW_RAW_MOUSE_MOTION, GLFW_TRUE);
   // glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
-  std::vector<Vertex> vertices;
-  std::vector<unsigned int> ebo;
-  generate_vertices(vertices, ebo);
-
-  std::vector<Vertex> verts;
-  std::vector<unsigned int> indices;
-  generate_cylinder(0.4f, 1.0f, 32, 8, verts, indices);
-
   glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
   glfwMakeContextCurrent(window);
   gladLoadGL();
   glfwSwapInterval(1);
   glEnable(GL_DEPTH_TEST);
 
+  Mesh grid;
+  {
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
+    generate_vertices(vertices, indices);
+    grid = Mesh(vertices, indices);
+  }
+  Mesh capsule;
+  {
+    std::vector<Vertex> vertices;
+    std::vector<unsigned int> indices;
+    generate_cylinder(0.4f, 1.0f, 32, 8, vertices, indices);
+    capsule = Mesh(vertices, indices);
+  }
+
   Shader shader = Shader("src/vert.glsl", "src/frag.glsl");
   unsigned int program = shader.getId();
-  const GLint vpos_location = glGetAttribLocation(program, "aPos");
-
-  GLuint vertex_buffer;
-  glGenBuffers(1, &vertex_buffer);
-  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-  glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), &vertices[0],
-               GL_STATIC_DRAW);
-
-  GLuint vertex_array;
-  glGenVertexArrays(1, &vertex_array);
-  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
-  glBindVertexArray(vertex_array);
-  glEnableVertexAttribArray(vpos_location);
-  glVertexAttribPointer(vpos_location, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                        (void *)0);
-
-  GLuint ebo2;
-  glGenBuffers(1, &ebo2);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo2);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, ebo.size() * sizeof(unsigned int),
-               &ebo[0], GL_STATIC_DRAW);
-
-  GLuint vertex_buffer3;
-  glGenBuffers(1, &vertex_buffer3);
-  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer3);
-  glBufferData(GL_ARRAY_BUFFER, verts.size() * sizeof(Vertex), &verts[0],
-               GL_STATIC_DRAW);
-
-  GLuint vertex_array3;
-  glGenVertexArrays(1, &vertex_array3);
-  glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer3);
-  glBindVertexArray(vertex_array3);
-  glEnableVertexAttribArray(vpos_location);
-  glVertexAttribPointer(vpos_location, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex),
-                        (void *)0);
-
-  GLuint ebo1;
-  glGenBuffers(1, &ebo1);
-  glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ebo1);
-  glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int),
-               &indices[0], GL_STATIC_DRAW);
 
   Camera *c = (Camera *)glfwGetWindowUserPointer(window);
   c->cameraPos = glm::vec3(0.f, 0.f, 3.f);
@@ -347,15 +314,13 @@ int main(void) {
     shader.setMat4("view", view);
     shader.setMat4("projection", projection);
 
-    glBindVertexArray(vertex_array);
-    glDrawElements(GL_TRIANGLES, ebo.size(), GL_UNSIGNED_INT, 0);
+    grid.draw();
 
     shader.setVec3("fillColor", 0.85f, 0.45f, 0.2f);
     model = glm::translate(model, glm::vec3(0.f, 1.4f, 100.f));
     shader.setMat4("model", model);
 
-    glBindVertexArray(vertex_array3);
-    glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+    capsule.draw();
 
     glfwSwapBuffers(window);
     glfwPollEvents();

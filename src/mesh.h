@@ -9,9 +9,15 @@ typedef struct {
 
 class Mesh {
 public:
-  Mesh(const std::vector<Vertex> &vertices);
+  Mesh() = default;
+  Mesh(const std::vector<Vertex> &vertices,
+       const std::vector<unsigned int> &indices);
+
+  void draw() const;
 
 private:
   GLuint VAO;
   GLuint VBO;
+  GLuint EBO;
+  GLsizei indexCount;
 };
