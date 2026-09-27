@@ -86,10 +86,38 @@ CMakeFiles/app.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/main.cpp.s"
 	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dylanchristiandihalim/build/src/main.cpp -o CMakeFiles/app.dir/src/main.cpp.s
 
+CMakeFiles/app.dir/src/shader.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/shader.cpp.o: /Users/dylanchristiandihalim/build/src/shader.cpp
+CMakeFiles/app.dir/src/shader.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/app.dir/src/shader.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/shader.cpp.o -MF CMakeFiles/app.dir/src/shader.cpp.o.d -o CMakeFiles/app.dir/src/shader.cpp.o -c /Users/dylanchristiandihalim/build/src/shader.cpp
+
+CMakeFiles/app.dir/src/shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/shader.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dylanchristiandihalim/build/src/shader.cpp > CMakeFiles/app.dir/src/shader.cpp.i
+
+CMakeFiles/app.dir/src/shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/shader.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dylanchristiandihalim/build/src/shader.cpp -o CMakeFiles/app.dir/src/shader.cpp.s
+
+CMakeFiles/app.dir/src/mesh.cpp.o: CMakeFiles/app.dir/flags.make
+CMakeFiles/app.dir/src/mesh.cpp.o: /Users/dylanchristiandihalim/build/src/mesh.cpp
+CMakeFiles/app.dir/src/mesh.cpp.o: CMakeFiles/app.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/app.dir/src/mesh.cpp.o"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/app.dir/src/mesh.cpp.o -MF CMakeFiles/app.dir/src/mesh.cpp.o.d -o CMakeFiles/app.dir/src/mesh.cpp.o -c /Users/dylanchristiandihalim/build/src/mesh.cpp
+
+CMakeFiles/app.dir/src/mesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/app.dir/src/mesh.cpp.i"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/dylanchristiandihalim/build/src/mesh.cpp > CMakeFiles/app.dir/src/mesh.cpp.i
+
+CMakeFiles/app.dir/src/mesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/app.dir/src/mesh.cpp.s"
+	/opt/homebrew/opt/llvm/bin/clang++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/dylanchristiandihalim/build/src/mesh.cpp -o CMakeFiles/app.dir/src/mesh.cpp.s
+
 CMakeFiles/app.dir/src/glad.c.o: CMakeFiles/app.dir/flags.make
 CMakeFiles/app.dir/src/glad.c.o: /Users/dylanchristiandihalim/build/src/glad.c
 CMakeFiles/app.dir/src/glad.c.o: CMakeFiles/app.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/app.dir/src/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/app.dir/src/glad.c.o"
 	/opt/homebrew/opt/llvm/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/app.dir/src/glad.c.o -MF CMakeFiles/app.dir/src/glad.c.o.d -o CMakeFiles/app.dir/src/glad.c.o -c /Users/dylanchristiandihalim/build/src/glad.c
 
 CMakeFiles/app.dir/src/glad.c.i: cmake_force
@@ -103,17 +131,21 @@ CMakeFiles/app.dir/src/glad.c.s: cmake_force
 # Object files for target app
 app_OBJECTS = \
 "CMakeFiles/app.dir/src/main.cpp.o" \
+"CMakeFiles/app.dir/src/shader.cpp.o" \
+"CMakeFiles/app.dir/src/mesh.cpp.o" \
 "CMakeFiles/app.dir/src/glad.c.o"
 
 # External object files for target app
 app_EXTERNAL_OBJECTS =
 
 app: CMakeFiles/app.dir/src/main.cpp.o
+app: CMakeFiles/app.dir/src/shader.cpp.o
+app: CMakeFiles/app.dir/src/mesh.cpp.o
 app: CMakeFiles/app.dir/src/glad.c.o
 app: CMakeFiles/app.dir/build.make
 app: /opt/homebrew/lib/libglfw.3.4.dylib
 app: CMakeFiles/app.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable app"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/dylanchristiandihalim/build/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable app"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/app.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

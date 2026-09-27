@@ -7,6 +7,18 @@
 },
 {
   "directory": "/Users/dylanchristiandihalim/build/build",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/dylanchristiandihalim/build/include -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/app.dir/src/shader.cpp.o -c /Users/dylanchristiandihalim/build/src/shader.cpp",
+  "file": "/Users/dylanchristiandihalim/build/src/shader.cpp",
+  "output": "CMakeFiles/app.dir/src/shader.cpp.o"
+},
+{
+  "directory": "/Users/dylanchristiandihalim/build/build",
+  "command": "/opt/homebrew/opt/llvm/bin/clang++  -I/Users/dylanchristiandihalim/build/include -isystem /opt/homebrew/include -std=gnu++17 -arch arm64 -o CMakeFiles/app.dir/src/mesh.cpp.o -c /Users/dylanchristiandihalim/build/src/mesh.cpp",
+  "file": "/Users/dylanchristiandihalim/build/src/mesh.cpp",
+  "output": "CMakeFiles/app.dir/src/mesh.cpp.o"
+},
+{
+  "directory": "/Users/dylanchristiandihalim/build/build",
   "command": "/opt/homebrew/opt/llvm/bin/clang  -I/Users/dylanchristiandihalim/build/include -isystem /opt/homebrew/include  -arch arm64 -o CMakeFiles/app.dir/src/glad.c.o -c /Users/dylanchristiandihalim/build/src/glad.c",
   "file": "/Users/dylanchristiandihalim/build/src/glad.c",
   "output": "CMakeFiles/app.dir/src/glad.c.o"
