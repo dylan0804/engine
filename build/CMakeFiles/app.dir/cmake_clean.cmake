@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/app.dir/src/camera.cpp.o"
+  "CMakeFiles/app.dir/src/camera.cpp.o.d"
   "CMakeFiles/app.dir/src/glad.c.o"
   "CMakeFiles/app.dir/src/glad.c.o.d"
   "CMakeFiles/app.dir/src/main.cpp.o"

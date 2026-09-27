@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 find_package(glfw3 REQUIRED)
 
 add_executable(app
-  src/main.
+  src/main.cpp
   src/shader.cpp
   src/mesh.cpp
   src/camera.cpp

@@ -1,13 +1,13 @@
+#include "camera.h"
 #include "glad/glad.h"
 #include "glm/ext/matrix_clip_space.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/scalar_constants.hpp"
-#include "glm/ext/vector_float3.hpp"
+#include "glm/geometric.hpp"
 #include "glm/trigonometric.hpp"
 #include "mesh.h"
 #include "shader.h"
 #include <GLFW/glfw3.h>
-#include <algorithm>
 #include <cmath>
 #include <cstddef>
 #include <cstdio>
@@ -16,14 +16,6 @@
 #include <iostream>
 #include <ostream>
 #include <vector>
-
-typedef struct {
-  glm::vec3 cameraPos;
-  glm::vec3 cameraUp;
-  glm::vec3 cameraFront;
-  float yaw;
-  float pitch;
-} Camera;
 
 static const char *vertex_shader_text =
     "#version 330\n"
@@ -55,7 +47,7 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action,
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
     glfwSetWindowShouldClose(window, GLFW_TRUE);
 
-  Camera *c = (Camera *)glfwGetWindowUserPointer(window);
+  Camera *c = static_cast<Camera *>(glfwGetWindowUserPointer(window));
 
   float currentFrame = glfwGetTime();
   deltaTime = currentFrame - lastFrame;
@@ -64,22 +56,22 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action,
   float speed = 2.5f * deltaTime;
 
   if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    c->cameraPos += speed * c->cameraFront;
+    c->setPos(c->getPos() + (speed * c->getFront()));
   if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    c->cameraPos -= speed * c->cameraFront;
+    c->setPos(c->getPos() - (speed * c->getFront()));
   if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    c->cameraPos -=
-        glm::normalize(glm::cross(c->cameraFront, c->cameraUp)) * speed;
+    c->setPos(c->getPos() -
+              (speed * glm::normalize(glm::cross(c->getFront(), c->getUp()))));
   if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    c->cameraPos +=
-        glm::normalize(glm::cross(c->cameraFront, c->cameraUp)) * speed;
+    c->setPos(c->getPos() +
+              (speed * glm::normalize(glm::cross(c->getFront(), c->getUp()))));
 }
 
 float lastX, lastY;
 bool firstMouse = true;
 static void cursor_position_callback(GLFWwindow *window, double xpos,
                                      double ypos) {
-  Camera *c = (Camera *)glfwGetWindowUserPointer(window);
+  Camera *c = static_cast<Camera *>(glfwGetWindowUserPointer(window));
   if (firstMouse) {
     lastX = xpos;
     lastY = ypos;
@@ -91,19 +83,21 @@ static void cursor_position_callback(GLFWwindow *window, double xpos,
   lastX = xpos;
   lastY = ypos;
 
-  c->yaw += xoffset * 0.1;
-  c->pitch += yoffset * 0.1;
+  c->setYaw(c->getYaw() + xoffset * 0.1f);
+  c->setPitch(c->getPitch() + yoffset * 0.1f);
 
-  if (c->pitch > 89.f)
-    c->pitch = 89.f;
-  if (c->pitch < -89.f)
-    c->pitch = -89.f;
+  if (c->getPitch() > 89.f)
+    c->setPitch(89.f);
+  if (c->getPitch() < -89.f)
+    c->setPitch(-89.f);
 
   glm::vec3 direction;
-  direction.x = cos(glm::radians(c->yaw)) * cos(glm::radians(c->pitch));
-  direction.y = sin(glm::radians(c->pitch));
-  direction.z = sin(glm::radians(c->yaw)) * cos(glm::radians(c->pitch));
-  c->cameraFront = glm::normalize(direction);
+  direction.x =
+      cos(glm::radians(c->getYaw())) * cos(glm::radians(c->getPitch()));
+  direction.y = sin(glm::radians(c->getPitch()));
+  direction.z =
+      sin(glm::radians(c->getYaw())) * cos(glm::radians(c->getPitch()));
+  c->setFront(glm::normalize(direction));
 }
 
 void mouse_button_callback(GLFWwindow *window, int button, int action,
@@ -251,10 +245,12 @@ int main(void) {
     exit(EXIT_FAILURE);
   }
 
-  Camera camera = {};
-  camera.yaw = -90.f;
-  glfwSetWindowUserPointer(window, &camera);
+  glm::vec3 pos = glm::vec3(0.f, 0.f, 3.f);
+  glm::vec3 front = glm::vec3(0.f, 0.f, -1.f);
+  glm::vec3 up = glm::vec3(0.f, 1.f, 0.f);
+  Camera c(pos, front, up, -90.f);
 
+  glfwSetWindowUserPointer(window, &c);
   glfwSetKeyCallback(window, key_callback);
   glfwSetCursorPosCallback(window, cursor_position_callback);
   glfwSetMouseButtonCallback(window, mouse_button_callback);
@@ -284,14 +280,8 @@ int main(void) {
     capsule = Mesh(vertices, indices);
   }
 
-  Shader shader = Shader("src/vert.glsl", "src/frag.glsl");
+  Shader shader("src/vert.glsl", "src/frag.glsl");
   unsigned int program = shader.getId();
-
-  Camera *c = (Camera *)glfwGetWindowUserPointer(window);
-  c->cameraPos = glm::vec3(0.f, 0.f, 3.f);
-  c->cameraFront = glm::vec3(0.f, 0.f, -1.f);
-  c->cameraUp = glm::vec3(0.f, 1.f, 0.f);
-
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
   while (!glfwWindowShouldClose(window)) {
@@ -304,7 +294,7 @@ int main(void) {
 
     glm::mat4 model = glm::mat4(1.0f);
     glm::mat4 view =
-        glm::lookAt(c->cameraPos, c->cameraPos + c->cameraFront, c->cameraUp);
+        glm::lookAt(c.getPos(), c.getPos() + c.getFront(), c.getUp());
     glm::mat4 projection =
         glm::perspective(glm::radians(60.0f), ratio, 0.1f, 100.0f);
 

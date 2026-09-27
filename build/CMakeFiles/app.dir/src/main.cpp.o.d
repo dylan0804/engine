@@ -1,32 +1,9 @@
 CMakeFiles/app.dir/src/main.cpp.o: \
   /Users/dylanchristiandihalim/build/src/main.cpp \
-  /Users/dylanchristiandihalim/build/include/glad/glad.h \
-  /Users/dylanchristiandihalim/build/include/KHR/khrplatform.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/stdint.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
-  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_clip_space.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/scalar_constants.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/../detail/setup.hpp \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cassert \
+  /Users/dylanchristiandihalim/build/src/camera.h \
+  /Users/dylanchristiandihalim/build/include/glm/glm.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/detail/_fixes.hpp \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cmath \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__config \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__config_site \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__configuration/abi.h \
@@ -36,34 +13,22 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__configuration/language.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__configuration/experimental.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__configuration/hardening.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_bounds.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cstddef \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/version \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/stddef.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/stddef.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_header_macro.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_ptrdiff_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_size_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_rsize_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_wchar_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_null.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_nullptr_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_max_align_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_offsetof.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/byte.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__fwd/byte.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/hypot.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/abs.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/enable_if.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_integral.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/integral_constant.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/remove_cv.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/max_align_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/nullptr_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/ptrdiff_t.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/size_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/exponential_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_arithmetic.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_floating_point.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_same.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/promote.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/min_max.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/roots.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/limits \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__undef_macros \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/version \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/type_traits \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/add_cv_quals.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/add_pointer.h \
@@ -73,12 +38,12 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/remove_reference.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/add_reference.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/aligned_storage.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/size_t.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/aligned_union.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/alignment_of.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/common_type.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/conditional.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/decay.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_same.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/remove_cvref.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/type_identity.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__utility/declval.h \
@@ -86,8 +51,6 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/extent.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/has_virtual_destructor.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_abstract.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_arithmetic.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_floating_point.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_array.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_assignable.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_base_of.h \
@@ -95,6 +58,7 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_compound.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_fundamental.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_null_pointer.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/nullptr_t.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_const.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_constructible.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_convertible.h \
@@ -121,6 +85,27 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_trivially_constructible.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_trivially_copyable.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cstdint \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stdint.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_int64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint8_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint16_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint32_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uint64_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/cdefs.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_symbol_aliasing.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_posix_availability.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_types.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_intptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/_types/_uintptr_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_intmax_t.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_types/_uintmax_t.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_trivially_destructible.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_union.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_unsigned.h \
@@ -149,17 +134,95 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_aggregate.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_swappable.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/negation.h \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/../detail/../simd/platform.h \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/scalar_constants.inl \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/limits \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__undef_macros \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../geometric.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/type_vec3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/qualifier.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/setup.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/type_vec3.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/compute_vector_relational.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/compute_vector_decl.hpp \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_constant_evaluated.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/special_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/copysign.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/traits.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/math.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/error_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/fdim.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/fma.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/gamma.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/hyperbolic_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/inverse_hyperbolic_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/inverse_trigonometric_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/logarithms.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/modulo.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/remainder.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/rounding_functions.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/trigonometric_functions.h \
+  /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cassert \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_assert.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_bounds.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/_static_assert.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cstddef \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/stddef.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/stddef.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/stddef.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_header_macro.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_ptrdiff_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_size_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_rsize_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_wchar_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_null.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_nullptr_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_max_align_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__stddef_offsetof.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/byte.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__fwd/byte.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/max_align_t.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__cstddef/ptrdiff_t.h \
+  /Users/dylanchristiandihalim/build/include/glm/detail/../simd/platform.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/climits \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_limits.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cfloat \
+  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/float.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/float.h \
+  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_header_macro.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_float.h \
+  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_infinity_nan.h \
+  /Users/dylanchristiandihalim/build/include/glm/fwd.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec2.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/./compute_vector_relational.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/./setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int2_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_int2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/scalar_int_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint2_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_uint2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/scalar_uint_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec3.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/compute_vector_relational.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/compute_vector_decl.hpp \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/functional \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__functional/binary_function.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__functional/binary_negate.h \
@@ -232,35 +295,6 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__utility/integer_sequence.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__utility/swap.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/compare \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cmath \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/hypot.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/abs.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/exponential_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/promote.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/min_max.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/roots.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__type_traits/is_constant_evaluated.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/special_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/copysign.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/traits.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/math.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/math.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/Availability.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityVersions.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternal.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/AvailabilityInternalLegacy.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/error_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/fdim.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/fma.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/gamma.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/hyperbolic_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/inverse_hyperbolic_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/inverse_trigonometric_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/logarithms.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/modulo.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/remainder.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/rounding_functions.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__math/trigonometric_functions.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/exception \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__exception/exception.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__exception/exception_ptr.h \
@@ -567,13 +601,6 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__bit/bit_log2.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__bit/blsr.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__functional/ranges_operations.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/climits \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/limits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/limits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/machine/limits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/limits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/arm/_limits.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/syslimits.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__algorithm/partial_sort_copy.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__algorithm/make_projected.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__algorithm/partition.h \
@@ -820,175 +847,139 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__locale_dir/wbuffer_convert.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/__locale_dir/wstring_convert.h \
   /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cstdarg \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/_vectorize.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/func_geometric.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../exponential.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec1.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/qualifier.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec1.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/./compute_vector_relational.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec2.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/type_vec4.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/compute_vector_relational.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/compute_vector_decl.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/func_exponential.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/../vector_relational.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/../detail/qualifier.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/../detail/setup.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/../detail/func_vector_relational.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/_vectorize.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../common.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/_fixes.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/func_common.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/compute_common.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../detail/setup.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../trigonometric.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/func_trigonometric.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_clip_space.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/constants.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/../ext/scalar_constants.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/constants.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../matrix.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../vec2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_vec2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int2_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_int2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/scalar_int_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/../detail/setup.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint2_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_uint2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/scalar_uint_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../vec3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_vec3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int3_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_int3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint3_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_uint3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../vec4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_vec4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_bool4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_float4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_double4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/setup.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_int4_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_int4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/vector_uint4_sized.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../ext/vector_uint4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat2x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x2.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/../matrix.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat2x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x3.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat2x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat2x4.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double2x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float2x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat3x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x2.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat3x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x3.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/../common.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat3x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat3x4.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double3x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float3x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat4x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x2.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x2_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat4x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x3.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x3_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../mat4x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/type_mat4x4.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/../detail/../geometric.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_double4x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x4.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/.././ext/matrix_float4x4_precision.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/func_matrix.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/../detail/../geometric.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.inl \
-  /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/ext/vector_float3.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/trigonometric.hpp \
-  /Users/dylanchristiandihalim/build/src/mesh.h \
-  /Users/dylanchristiandihalim/build/src/shader.h \
-  /Users/dylanchristiandihalim/build/include/glm/glm.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/detail/_fixes.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/detail/setup.hpp \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/cfloat \
-  /opt/homebrew/Cellar/llvm/22.1.3/bin/../include/c++/v1/float.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/float.h \
-  /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/float.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_header_macro.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_float.h \
-  /opt/homebrew/Cellar/llvm/22.1.3/lib/clang/22/include/__float_infinity_nan.h \
-  /Users/dylanchristiandihalim/build/include/glm/fwd.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/detail/qualifier.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/vec2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/_vectorize.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int3_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_int3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint3_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_uint3.hpp \
   /Users/dylanchristiandihalim/build/include/glm/vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_vec4.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_bool4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_double4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_int4_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_int4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint4_sized.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../ext/vector_uint4.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/matrix_double2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_mat2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/type_mat2x2.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../matrix.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat2x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double2x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat2x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat2x3.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double2x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float2x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float2x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat2x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double2x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat2x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat2x4.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double2x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float2x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float2x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat3x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x2.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat3x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x3.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../matrix.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../common.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/_fixes.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/func_common.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../vector_relational.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/qualifier.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/func_vector_relational.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/compute_common.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/type_vec1.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/type_vec1.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/./compute_vector_relational.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/type_vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/type_vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/type_vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/_vectorize.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat3x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat3x4.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double3x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float3x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat4x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x2.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat4x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x3.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x3_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../mat4x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/type_mat4x4.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../geometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/func_geometric.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../exponential.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/type_vec1.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/type_vec2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/type_vec3.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/type_vec4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/func_exponential.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/../vector_relational.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../detail/_vectorize.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/../detail/../detail/../common.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_double4x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/.././ext/matrix_float4x4_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../detail/func_matrix.inl \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/../detail/../detail/../geometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/matrix_double2x2_precision.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/matrix_float2x2.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/./ext/matrix_float2x2_precision.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat2x3.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat2x4.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat3x2.hpp \
@@ -997,12 +988,12 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /Users/dylanchristiandihalim/build/include/glm/mat4x2.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat4x3.hpp \
   /Users/dylanchristiandihalim/build/include/glm/mat4x4.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/trigonometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/detail/func_trigonometric.inl \
+  /Users/dylanchristiandihalim/build/include/glm/detail/_vectorize.hpp \
   /Users/dylanchristiandihalim/build/include/glm/exponential.hpp \
   /Users/dylanchristiandihalim/build/include/glm/common.hpp \
   /Users/dylanchristiandihalim/build/include/glm/packing.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_uint2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float2.hpp \
-  /Users/dylanchristiandihalim/build/include/glm/./ext/vector_float4.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/func_packing.inl \
   /Users/dylanchristiandihalim/build/include/glm/detail/../common.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/type_half.hpp \
@@ -1012,7 +1003,24 @@ CMakeFiles/app.dir/src/main.cpp.o: \
   /Users/dylanchristiandihalim/build/include/glm/vector_relational.hpp \
   /Users/dylanchristiandihalim/build/include/glm/integer.hpp \
   /Users/dylanchristiandihalim/build/include/glm/detail/func_integer.inl \
-  /Users/dylanchristiandihalim/build/include/glm/detail/_vectorize.hpp \
+  /Users/dylanchristiandihalim/build/include/glad/glad.h \
+  /Users/dylanchristiandihalim/build/include/KHR/khrplatform.h \
+  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_clip_space.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/scalar_constants.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/../detail/setup.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../ext/scalar_constants.inl \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../geometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../trigonometric.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_clip_space.inl \
+  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/constants.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/../ext/scalar_constants.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../gtc/constants.inl \
+  /Users/dylanchristiandihalim/build/include/glm/ext/../matrix.hpp \
+  /Users/dylanchristiandihalim/build/include/glm/ext/matrix_transform.inl \
+  /Users/dylanchristiandihalim/build/include/glm/ext/scalar_constants.hpp \
+  /Users/dylanchristiandihalim/build/src/mesh.h \
+  /Users/dylanchristiandihalim/build/src/shader.h \
   /opt/homebrew/include/GLFW/glfw3.h \
   /Users/dylanchristiandihalim/build/include/glm/gtc/type_ptr.hpp \
   /Users/dylanchristiandihalim/build/include/glm/gtc/../gtc/quaternion.hpp \

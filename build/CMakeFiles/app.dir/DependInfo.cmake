@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/dylanchristiandihalim/build/src/glad.c" "CMakeFiles/app.dir/src/glad.c.o" "gcc" "CMakeFiles/app.dir/src/glad.c.o.d"
+  "/Users/dylanchristiandihalim/build/src/camera.cpp" "CMakeFiles/app.dir/src/camera.cpp.o" "gcc" "CMakeFiles/app.dir/src/camera.cpp.o.d"
   "/Users/dylanchristiandihalim/build/src/main.cpp" "CMakeFiles/app.dir/src/main.cpp.o" "gcc" "CMakeFiles/app.dir/src/main.cpp.o.d"
   "/Users/dylanchristiandihalim/build/src/mesh.cpp" "CMakeFiles/app.dir/src/mesh.cpp.o" "gcc" "CMakeFiles/app.dir/src/mesh.cpp.o.d"
   "/Users/dylanchristiandihalim/build/src/shader.cpp" "CMakeFiles/app.dir/src/shader.cpp.o" "gcc" "CMakeFiles/app.dir/src/shader.cpp.o.d"
