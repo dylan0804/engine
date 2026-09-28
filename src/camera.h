@@ -1,5 +1,9 @@
 #pragma once
 
+// clang-format off
+#include "glad/glad.h"
+#include "GLFW/glfw3.h"
+// clang-format on
 #include "glm/glm.hpp"
 
 class Camera {
@@ -18,10 +22,12 @@ public:
   float getYaw() const;
   float getPitch() const;
 
+  void processMovement(GLFWwindow *window, float &lastFrame, float &deltaTime);
+
 private:
   glm::vec3 cameraPos;
   glm::vec3 cameraUp;
   glm::vec3 cameraFront;
   float yaw;
-  float pitch;
+  float pitch = 0;
 };

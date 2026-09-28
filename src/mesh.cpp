@@ -21,6 +21,12 @@ Mesh::Mesh(const std::vector<Vertex> &vertices,
                &indices[0], GL_STATIC_DRAW);
 }
 
+Mesh::~Mesh() {
+  glDeleteVertexArrays(1, &VAO);
+  glDeleteBuffers(1, &VBO);
+  glDeleteBuffers(1, &EBO);
+}
+
 void Mesh::draw() const {
   glBindVertexArray(VAO);
   glDrawElements(GL_TRIANGLES, indexCount, GL_UNSIGNED_INT, 0);

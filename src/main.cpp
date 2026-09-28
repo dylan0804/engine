@@ -1,5 +1,4 @@
 #include "camera.h"
-#include "glad/glad.h"
 #include "glm/ext/matrix_clip_space.hpp"
 #include "glm/ext/matrix_transform.hpp"
 #include "glm/ext/scalar_constants.hpp"
@@ -16,26 +15,6 @@
 #include <iostream>
 #include <ostream>
 #include <vector>
-
-static const char *vertex_shader_text =
-    "#version 330\n"
-    "layout (location = 0) in vec3 aPos;\n"
-    "uniform mat4 model;\n"
-    "uniform mat4 view;"
-    "uniform mat4 projection;"
-    "void main() {\n"
-    "     gl_Position = projection * view * model * vec4(aPos, 1.0);"
-    "}\n";
-
-static const char *fragment_shader_text =
-    "#version 330\n"
-    "uniform vec3 fillColor;"
-    "out vec4 FragColor;"
-    "void main()\n"
-    "{\n"
-    "     FragColor = vec4(fillColor, 1.0);"
-    "}\n";
-
 static void error_callback(int error, const char *description) {
   fprintf(stderr, "Error: %s\n", description);
 }
@@ -46,25 +25,6 @@ static void key_callback(GLFWwindow *window, int key, int scancode, int action,
                          int mods) {
   if (key == GLFW_KEY_ESCAPE && action == GLFW_PRESS)
     glfwSetWindowShouldClose(window, GLFW_TRUE);
-
-  Camera *c = static_cast<Camera *>(glfwGetWindowUserPointer(window));
-
-  float currentFrame = glfwGetTime();
-  deltaTime = currentFrame - lastFrame;
-  lastFrame = currentFrame;
-
-  float speed = 2.5f * deltaTime;
-
-  if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS)
-    c->setPos(c->getPos() + (speed * c->getFront()));
-  if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
-    c->setPos(c->getPos() - (speed * c->getFront()));
-  if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS)
-    c->setPos(c->getPos() -
-              (speed * glm::normalize(glm::cross(c->getFront(), c->getUp()))));
-  if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
-    c->setPos(c->getPos() +
-              (speed * glm::normalize(glm::cross(c->getFront(), c->getUp()))));
 }
 
 float lastX, lastY;
@@ -284,6 +244,9 @@ int main(void) {
   unsigned int program = shader.getId();
   glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 
+  float lastFrame = 0.f;
+  float deltaTime = 0.f;
+
   while (!glfwWindowShouldClose(window)) {
     int width, height;
     glfwGetFramebufferSize(window, &width, &height);
@@ -312,6 +275,7 @@ int main(void) {
 
     capsule.draw();
 
+    c.processMovement(window, lastFrame, deltaTime);
     glfwSwapBuffers(window);
     glfwPollEvents();
   }
