@@ -181,7 +181,7 @@ void generate_cylinder(float radius, float height, int longSegments,
     verts.push_back({radius * cos(angle), -half_h, radius * sin(angle)});
   }
 
-  for (int i = 0; i <= longSegments; i++) {
+  for (int i = 0; i < longSegments; i++) {
     int topA = wall_start + i;
     int topB = wall_start + i + 1;
     int botA = verts_per_ring + wall_start + i;
